@@ -20,6 +20,7 @@ export class CanvasLocal {
     }
     drawRomboide(x1, y1, x2, y2, x3, y3, x4, y4, color) {
         // Color de relleno
+        
         this.graphics.fillStyle = color;
         // Comenzamos la ruta de dibujo, o path
         this.graphics.beginPath();
@@ -73,24 +74,24 @@ export class CanvasLocal {
         this.drawRomboide(x1 - width * 0.5, y1 - height - unidad * 0.2, x1 - width * 0.75, y1 - height - unidad * 0.5, x1 - width * 0.75, y1 - unidad * 0.5, x1 - width * 0.5, y1 - unidad * 0.2, "rgb(" + (r - 50) + "," + (g + 40) + "," + b + ")");
     }
     paint() {
-        let h = [120, 100, 160, 20];
-        //let h: number[] = [19, 10, 16, 2];
+        let h = [120, 100, 160,20];
+        //let h= number[] = [19, 10, 16, 2];
         let maxEsc;
-        let colors = ['magenta', 'red', 'green', 'yellow'];
+        let colors = ['MAGENTA', 'RED', 'GREEN', 'YELLOW'];
         maxEsc = this.maxH(h);
         this.graphics.strokeStyle = 'black';
         this.graphics.fillStyle = colors[0];
-        /*this.drawLine(this.iX(0), this.iY(0), this.iX(8), this.iY(0));
-        this.drawLine(this.iX(0), this.iY(0), this.iX(0), this.iY(6));*/
+        this.drawLine(this.iX(0), this.iY(0), this.iX(10), this.iY(0));
+        this.drawLine(this.iX(0), this.iY(), this.iX(), this.iY(6));
         //las 6 unidades se dividen entre 4 periodos de lineas cada una 
         //representara una escala de 1/4 del total maximo
-        /* let i = 0;
+         let i = 0;
          for (let y = 0.6; y <= 6; y += 1.35){
            this.drawLine(this.iX(0.6), this.iY(y), this.iX(8), this.iY(y));
            this.drawLine(this.iX(0), this.iY(y - 0.6), this.iX(0.6), this.iY(y));
            this.graphics.strokeText((maxEsc*i/4)+"",this.iX(-0.5), this.iY(y-0.7));
            i++;
-         }*/
+         }
         this.drawLine(this.iX(0), this.iY(0), this.iX(0), this.iY(6));
         this.drawLine(this.iX(2), this.iY(0), this.iX(2), this.iY(6));
         this.graphics.strokeStyle = 'black';
