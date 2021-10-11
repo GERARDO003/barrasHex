@@ -73,6 +73,7 @@ export class CanvasLocal {
         this.drawRomboide(x1 + width * 0.5, y1 - height - unidad * 0.2, x1 + width * 0.75, y1 - height - unidad * 0.5, x1 + width * 0.75, y1 - unidad * 0.5, x1 + width * 0.5, y1 - unidad * 0.2, "rgb(" + (r - 50) + "," + (g + 40) + "," + b + ")");
         this.drawRomboide(x1 - width * 0.5, y1 - height - unidad * 0.2, x1 - width * 0.75, y1 - height - unidad * 0.5, x1 - width * 0.75, y1 - unidad * 0.5, x1 - width * 0.5, y1 - unidad * 0.2, "rgb(" + (r - 50) + "," + (g + 40) + "," + b + ")");
     }
+    
     paint() {
         let h = [120, 100, 160,20];
         //let h= number[] = [19, 10, 16, 2];
@@ -93,11 +94,12 @@ export class CanvasLocal {
            i++;
          }
         this.drawLine(this.iX(0), this.iY(0), this.iX(0), this.iY(6));
-        this.drawLine(this.iX(2), this.iY(0), this.iX(2), this.iY(6));
+       // this.drawLine(this.iX(2), this.iY(0), this.iX(2), this.iY(6));
         this.graphics.strokeStyle = 'black';
         let ind = 0;
         for (let i = 1; i <= 8; i += 2) {
-            this.drawHexface(this.iX(i), this.iY(6 * h[ind] / maxEsc), this.iX(1) - this.iX(0), this.iY(6 * h[ind] / maxEsc) - this.iY(0), 255, 0, 0);
+            this.graphics.fillStyle = colors[ind];
+            this.drawHexface(this.iX(i), this.iY(6* h[ind] / maxEsc), this.iX(1) - this.iX(0), this.iY(6 * h[ind] / maxEsc) - this.iY(0), 255, 20, 200);
             ind++;
         }
         /* for (let i = 0.5; i <=8; i += 2){
